@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="zfModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<div ng-controller="firstCtrl">
+   <!-- <ul>
+        <li ng-repeat="val in data track by $index " >
+            {{val.name}}
+            <ul>
+                <li ng-repeat="val in val.type track by $index ">
+                    {{val}}
+                </li>
+            </ul>
+        </li>
+    </ul>-->
+    <ul>
+        <li ng-repeat="(key,val) in obj track by $index " >
+            {{key}}:{{val}}
+        </li>
+    </ul>
+</div>
+<script src="node_modules/angular/angular.js"></script>
+<script>
+    var app=angular.module('zfModule',[]);
+    app.controller('firstCtrl',['$scope',function ($scope) {
+
+        $scope.obj={
+            name:'zfpx',
+            age:8,
+            address:'回龙观'
+        }}]
+    )
+
+
+</script>
+
+</body>
+</html>
